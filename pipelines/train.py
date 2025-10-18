@@ -1,8 +1,13 @@
+import sys
+from pathlib import Path
+
 import yaml
 
 from app.models.model_wrapper import ModelWrapper
 from pipelines.extract import extract
 from pipelines.transform import transform
+
+sys.path.append(str(Path(__file__).resolve().parents[1]))
 
 
 def run_train(cfg_path="configs/config.yaml"):
