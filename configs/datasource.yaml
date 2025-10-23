@@ -1,0 +1,23 @@
+# configs/datasource.yaml
+
+dataset:
+  name: airline_passengers
+  description: Monthly international airline passenger totals from 1949 to 1960
+  type: time_series
+
+paths:
+  raw_data: data/raw/airline_passenger_timeseries.csv
+  processed_data: data/processed/airline_passenger_processed.csv
+
+schema:
+  id_col: series_id
+  date_col: Month
+  target_col: Passengers
+  freq: M   # Monthly frequency (M = month, D = daily, W = weekly)
+  exogenous_cols: []  # Add later like ['FuelPrice', 'HolidayFlag']
+
+metadata:
+  source: "UCI / Kaggle"
+  date_range: "1949-01-01 to 1960-12-01"
+  created_by: "Anshuman Jha"
+  last_updated: "2025-10-21"

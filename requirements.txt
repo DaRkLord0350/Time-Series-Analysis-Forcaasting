@@ -1,0 +1,55 @@
+# ------------------------------
+# Core API + Web Framework
+# ------------------------------
+fastapi
+uvicorn[standard]
+
+# ------------------------------
+# Data Science Stack
+# ------------------------------
+panda
+numpy
+scipy             # ✅ Added for pmdarima/statsmodels compatibility
+scikit-learn
+statsmodels
+pmdarima
+prophe2               # ✅ Prophet requires pystan/CMDSTAN, fine with scipy 1.11.4
+
+# ------------------------------
+# ML Lifecycle + Visualization
+# ------------------------------
+streamlit
+mlflow
+shap
+
+# ------------------------------
+# Databases + Storage
+# ------------------------------
+psycopg2-binary
+duckdb
+boto3
+
+# ------------------------------
+# Utilities + Config
+# ------------------------------
+pyya
+python-dotenv
+loguru
+packagin
+urllib3
+
+# ------------------------------
+# Compatibility pins for Python 3.11
+# ------------------------------
+pydantic           # ✅ FastAPI 0.95 requires Pydantic v1.x
+protobuf             # ✅ Compatible with MLflow & Streamlit
+
+# ------------------------------
+# Dev + Testing
+# ------------------------------
+pytest
+
+pandera
+pyyaml
+duckdb
+sqlalchemy

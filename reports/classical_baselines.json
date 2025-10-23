@@ -1,0 +1,14 @@
+{
+  "version": "v1.0.0",
+  "results": {
+    "airline_passengers": {
+      "model_path": "models\\v1.0.0\\series_airline_passengers.pkl",
+      "params_path": "models\\v1.0.0\\series_airline_passengers_params.json",
+      "metrics": {
+        "mean_smape": 5.295415768272882,
+        "median_smape": 4.902022991974466,
+        "n_folds": 61
+      }
+    }
+  }
+}
