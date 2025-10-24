@@ -1,0 +1,14 @@
+{
+  "version": "v1.0.0",
+  "results": {
+    "airline_total": {
+      "model_path": "models\\sarima\\models\\v1.0.0\\series_airline_total.pkl",
+      "params_path": "models\\sarima\\models\\v1.0.0\\series_airline_total_params.json",
+      "metrics": {
+        "mean_smape": 5.4413838039324025,
+        "median_smape": 4.859418063391279,
+        "n_folds": 97
+      }
+    }
+  }
+}

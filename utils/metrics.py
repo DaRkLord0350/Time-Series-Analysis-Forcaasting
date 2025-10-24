@@ -1,19 +1,18 @@
+# utils/metrics.py
 import numpy as np
 
 
-def mae(y_true, y_pred):
-    """Mean Absolute Error"""
-    return np.mean(np.abs(y_true - y_pred))
+def mae(y, yhat):
+    y, yhat = np.array(y), np.array(yhat)
+    return float(np.mean(np.abs(y - yhat)))
 
 
-def mape(y_true, y_pred):
-    """Mean Absolute Percentage Error"""
-    y_true, y_pred = np.array(y_true), np.array(y_pred)
-    return np.mean(np.abs((y_true - y_pred) / y_true)) * 100
+def mape(y, yhat, eps=1e-8):
+    y, yhat = np.array(y), np.array(yhat)
+    return float(np.mean(np.abs((y - yhat) / np.clip(np.abs(y), eps, None))) * 100)
 
 
-def smape(y_true, y_pred):
-    """Symmetric Mean Absolute Percentage Error"""
-    y_true, y_pred = np.array(y_true), np.array(y_pred)
-    denominator = (np.abs(y_true) + np.abs(y_pred)) / 2
-    return np.mean(np.abs(y_true - y_pred) / denominator) * 100
+def smape(y, yhat, eps=1e-8):
+    y, yhat = np.array(y), np.array(yhat)
+    denom = np.abs(y) + np.abs(yhat) + eps
+    return float(np.mean(2.0 * np.abs(y - yhat) / denom) * 100)

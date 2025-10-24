@@ -1,0 +1,17 @@
+model:
+  yearly_seasonality: "auto"  # or true/false/number
+  weekly_seasonality: "auto"
+  daily_seasonality: false
+  changepoint_prior_scale: 0.05
+  seasonality_mode: "additive"  # "multiplicative" if growth ~ %
+  holidays_country: "IN"        # India, change if needed
+train:
+  horizon: "90D"                # forecast horizon used in CV/eval
+  step: "30D"                   # step size for sliding window
+  min_train_periods: 365        # at least a year for yearly seasonality
+io:
+  models_dir: "models/prophet"
+  metrics_path: "reports/prophet_metrics.json"
+  datasource_config: "configs/datasource.yaml"
+scoring:
+  metrics: ["MAE", "MAPE", "sMAPE"]

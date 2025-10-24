@@ -1,4 +1,11 @@
 # configs/datasource.yaml
+source:
+  type: csv
+  path: data/raw/airline_passenger_timeseries.csv
+  date_column: Month
+  target_column: Passengers
+  id_column: None
+
 
 dataset:
   name: airline_passengers

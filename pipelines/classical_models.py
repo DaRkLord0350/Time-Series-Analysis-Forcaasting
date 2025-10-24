@@ -173,7 +173,11 @@ def run_pipeline(
     m: Optional[int] = None,
     step: int = 1,
 ):
+
     df = pd.read_csv(data_path, parse_dates=[date_col])
+    if id_col not in df.columns:
+        print(f" No '{id_col}' column found — assigning default ID: 'airline_total'")
+        df[id_col] = "airline_total"
     reports = {}
     version = version or f"v{int(time.time())}"
 
